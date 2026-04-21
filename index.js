@@ -30,5 +30,5 @@ animationSwitch.addEventListener("change", () => {
 });
 
 hideSwitch.addEventListener("change", () => {
-  progressBar.toggleVisibility();
+  progressBar.toggleVisibility(numberInput, animationSwitch);
 });
