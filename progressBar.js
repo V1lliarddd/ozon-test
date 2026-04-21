@@ -92,11 +92,22 @@ export class ProgressBar {
       }
     }, this.timeDelayForAnimation);
   }
-
-  toggleVisibility() {
+  /**
+   *
+   * @param {HTMLElement} numberInput числовой инпут
+   * @param {HTMLElement} animationSwitch инпут для анимаций
+   */
+  toggleVisibility(numberInput, animationSwitch) {
     this.progressElement.classList.toggle("hide");
-    this.progressElement.classList.contains("hide")
-      ? this.setState(HIDDEN)
-      : this.setState(NORMAL);
+    if (this.progressElement.classList.contains("hide")) {
+      this.setState(HIDDEN);
+      // Отключаю возможность менять состояния
+      numberInput.disabled = true;
+      animationSwitch.disabled = true;
+    } else {
+      this.setState(NORMAL);
+      numberInput.disabled = false;
+      animationSwitch.disabled = false;
+    }
   }
 }
