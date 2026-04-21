@@ -1,0 +1,118 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.content {
+  max-width: 100svw;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-family:
+    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  letter-spacing: -0.025rem;
+  margin-bottom: 20px;
+  align-self: self-start;
+}
+
+.progress-bar {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 70px;
+}
+
+.progress-bar__inner-ring {
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  stroke-linecap: butt;
+  transition: stroke-dashoffset 0.2s ease;
+}
+
+/* Не уверен как именно нужно скрывать, поэтому сделал 2 варианта */
+
+.hide-visibility {
+  visibility: none;
+}
+
+.hide {
+  display: none;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.controls__group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.number-input::-webkit-inner-spin-button,
+.number-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.number-input {
+  width: 4rem;
+  padding: 5px;
+  border-radius: 20px;
+}
+
+.switch-input {
+  appearance: none;
+  width: 4rem;
+  padding: 5px;
+  border-radius: 20px;
+  background-color: #f5f2f2;
+  height: 2rem;
+  position: relative;
+}
+
+.switch-input::before {
+  content: "";
+  height: 1.5rem;
+  width: 1.5rem;
+  position: absolute;
+  background-color: white;
+  border-radius: 50px;
+  top: calc((2rem - 1.5rem) / 2);
+  left: 0.25rem;
+  transition: 0.3s;
+}
+
+.switch-input:checked {
+  background-color: #4f68e8;
+}
+
+.switch-input:checked::before {
+  translate: 2rem;
+}
+
+@media (orientation: landscape) {
+  .content {
+    flex-direction: row;
+    justify-content: start;
+  }
+  .controls {
+    margin-left: 50px;
+  }
+}

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Тестовое задание в Озон Банк" />
+    <meta name="title" content="Progress Bar" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Progress Bar</title>
+  </head>
+  <body>
+    <main class="content">
+      <h3 class="title">Progress</h3>
+      <section class="progress-bar" id="progress-bar">
+        <svg
+          class="progress-bar__outer-ring"
+          width="200"
+          height="200"
+          viewBox="0 0 200 200"
+        >
+          <circle
+            cx="100"
+            cy="100"
+            r="60"
+            fill="none"
+            stroke="#f7f5f5"
+            stroke-width="12"
+          />
+          <circle
+            class="progress-bar__inner-ring"
+            id="progress-bar__inner-ring"
+            cx="100"
+            cy="100"
+            r="60"
+            fill="none"
+            stroke="#4f68e8"
+            stroke-width="12"
+            stroke-linecap="round"
+          />
+        </svg>
+      </section>
+      <section class="controls">
+        <label class="controls__group">
+          <input type="number" id="value" class="number-input" />
+          <span class="input-label">Value</span>
+        </label>
+        <label class="controls__group">
+          <input type="checkbox" id="isAnimate" class="switch-input" />
+          <span class="input-label">Animate</span>
+        </label>
+        <label class="controls__group">
+          <input type="checkbox" id="isHide" class="switch-input" />
+          <span class="input-label">Hide</span>
+        </label>
+      </section>
+    </main>
+
+    <script async type="module" src="./index.js"></script>
+  </body>
+</html>
