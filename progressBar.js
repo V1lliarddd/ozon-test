@@ -64,6 +64,7 @@ export class ProgressBar {
   setAnimation(value, numberInput, animationSwitch, hideSwitch) {
     if (value === 0) {
       this.setValue(0);
+      animationSwitch.checked = false;
       return;
     }
     this.setState(ANIMATED);
