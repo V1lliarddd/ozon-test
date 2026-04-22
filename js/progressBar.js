@@ -12,14 +12,8 @@ export class ProgressBar {
     circleElement = undefined,
     timeDelayForAnimation = 500,
   ) {
-    if (circleElement === undefined)
-      this.circleElement = document.getElementById("progress-bar__inner-ring");
-    else this.circleElement = circleElement;
-
-    if (progressElement === undefined)
-      this.progressElement = document.getElementById("progress-bar");
-    else this.progressElement = progressElement;
-
+    this.circleElement = circleElement;
+    this.progressElement = progressElement;
     this.radius = 60;
     this.cirleLength = 2 * Math.PI * this.radius;
     this.animationInterval = null;
