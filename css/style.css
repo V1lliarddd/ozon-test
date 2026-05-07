@@ -41,7 +41,7 @@
 /* Не уверен как именно нужно скрывать, поэтому сделал 2 варианта */
 
 .hide-visibility {
-  visibility: none;
+  visibility: hidden;
 }
 
 .hide {
